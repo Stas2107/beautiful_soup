@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+from googletrans import Translator
+
+translator = Translator()
 
 
 # Создаём функцию, которая будет получать информацию
@@ -33,13 +36,16 @@ def word_game():
         word = word_dict.get("english_words")
         word_definition = word_dict.get("word_definition")
 
+        word_ru = translator.translate(word, dest="ru").text
+        word_definition_ru = translator.translate(word_definition, dest="ru").text
+
         # Начинаем игру
-        print(f"Значение слова - {word_definition}")
+        print(f"Значение слова - {word_definition_ru}")
         user = input("Что это за слово? ")
-        if user == word:
+        if user == word_ru:
             print("Все верно!")
         else:
-            print(f"Ответ неверный, было загадано это слово - {word}")
+            print(f"Ответ неверный, было загадано это слово - {word_ru}")
 
         # Создаём возможность закончить игру
         play_again = input("Хотите сыграть еще раз? y/n")

@@ -48,8 +48,8 @@ def word_game():
             print(f"Ответ неверный, было загадано это слово - {word_ru}")
 
         # Создаём возможность закончить игру
-        play_again = input("Хотите сыграть еще раз? y/n")
-        if play_again != "y":
+        play_again = input("Хотите сыграть еще раз? д/н")
+        if play_again != "д":
             print("Спасибо за игру!")
             break
 

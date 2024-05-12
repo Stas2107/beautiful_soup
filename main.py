@@ -1,12 +1,11 @@
 import tkinter as tk
 import requests
-from googletrans import Translator
+import googletrans
 from bs4 import BeautifulSoup
 
-translator = Translator()
+translator = googletrans.Translator()
 language = "en"
 word_ru = ""
-
 
 
 def get_english_words():
